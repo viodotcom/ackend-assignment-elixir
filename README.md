@@ -27,7 +27,7 @@ ip_address,country_code,country,city,latitude,longitude,mystery_value
 In doing so:
 
 - Define a data format suitable for the data contained in the CSV file.
-- Sanitise the entries: the CVS file comes from an unreliable source, which means that the entries can be duplicated, may miss some value, the value can not be in the correct format, or maybe completely bogus.
+- Sanitise the entries: the CSV file comes from an unreliable source, which means that the entries can be duplicated, may miss some value, the value can not be in the correct format, or maybe completely bogus.
 - At the end of the import process, return some statistics about the time elapsed, as well as the number of entries accepted/discarded.
 - The library should be configurable by an external configuration (particularly with regards to the DB configuration).
 - The API layer should implement a single HTTP endpoint that, given an IP address, returns information about the IP address location (e.g. country, city).
