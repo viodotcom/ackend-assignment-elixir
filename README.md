@@ -4,7 +4,7 @@
 
 ### Overview
 
-You are provided with a CSV file (`data_dump.csv`) that contains raw geolocation data. The goal is to develop a service that imports such data and expose it via an API.
+You are provided with a CSV file (`data_dump.csv`) that contains raw geolocation data. The goal is to develop a service that imports such data and exposes it via an API.
 
 Sample data:
 
@@ -22,22 +22,25 @@ ip_address,country_code,country,city,latitude,longitude,mystery_value
 1. Develop a library/component with two main features:
    - A service that parses the CSV file containing the raw data and persists it in a database;
    - An interface to provide access to the geolocation data (model layer);
-1. Develop a REST API that uses the aforementioned library to expose the geolocation data.
+1. Develop a REST API that uses the library above to expose the geolocation data.
 
 In doing so:
 
-- Define a data format suitable for the data contained in the CSV file;
-- Sanitise the entries: the file comes from an unreliable source, this means that the entries can be duplicated, may miss some value, the value can not be in the correct format or completely bogus;
-- At the end of the import process, return some statistics about the time elapsed, as well as the number of entries accepted/discarded;
-- The library should be configurable by an external configuration (particularly with regards to the DB configuration);
-- The API layer should implement a single HTTP endpoint that, given an IP address, returns information about the IP address' location (e.g. country, city).
+- Define a data format suitable for the data contained in the CSV file.
+- Sanitise the entries: the CVS file comes from an unreliable source, which means that the entries can be duplicated, may miss some value, the value can not be in the correct format, or maybe completely bogus.
+- At the end of the import process, return some statistics about the time elapsed, as well as the number of entries accepted/discarded.
+- The library should be configurable by an external configuration (particularly with regards to the DB configuration).
+- The API layer should implement a single HTTP endpoint that, given an IP address, returns information about the IP address location (e.g. country, city).
 
-### Expected outcome and shipping:
+### Output
 
-- A library/component that packages the import service and the interface for accessing the geolocation data;
-- A REST API application that uses the aforementioned library
-- Deploy the project on a cloud platform of your choice (e.g. [Gigalixir](https://www.gigalixir.com/), [Heroku](https://www.heroku.com/), [Fly.io](https://fly.io/), [Digital Ocean](https://www.digitalocean.com/), AWS, Google Cloud or Azure).
-- Import part of the sample data in the deployed application (according to the could platform limits).
+1. We expect to see the code for the following, available in one or multiple git repositories (ex. GitHub, GitLab, Bitbucket, ...):
+
+   - A library/component that packages the import service and the interface for accessing the geolocation data.
+   - A REST API application that uses the library above.
+
+2. We also expect to see the application running. To do that, the code should be deployed on a Cloud Platform of your choice (e.g. [Gigalixir](https://www.gigalixir.com/), [Heroku](https://www.heroku.com/), [Fly.io](https://fly.io/), [Digital Ocean](https://www.digitalocean.com/), AWS, Google Cloud or Azure), and the sample data, should be imported into the deployed application (according to the cloud platform limits). Please use `cloud_data_dump.csv` as the file to import into the deployed application.
+3. We would like to see your train of thought and trade-offs written down in a file.
 
 #### Bonus
 
@@ -49,9 +52,9 @@ The following items can add extra points to your evaluation, but you are not exp
 ### Notes
 
 - The file's contents are fake, you do not have to worry about data correctness.
-- In production, the import service would run as part of a scheduled/cron job. We don't want that part implemented as part of this exercise, but you can think in an interface or script to trigger the importing process.
+- The import service would run as part of a scheduled/cron job in production. **We don't want that part implemented as part of this exercise**, but you can think of an interface or script to trigger the importing process.
 - For running the application locally (development) a DB container can be included.
-- You can structure the repository as you see it fit.
+- You can structure the repository as you see fit.
 
 ### Evaluation
 
@@ -61,5 +64,5 @@ The following are the criteria we will use to evaluate your work:
 - Well-tested solution;
 - Best code practices in general;
 - Architectural design skills;
-- API design and data structure skills (i.e. correctness of the API responses, etc);
-- Communication and writing skills (i.e. documentation on how the apps works, setup and tradeoffs).
+- API design and data structure skills (i.e. correctness of the API responses, etc.);
+- Communication and writing skills (i.e. documentation on how the apps work, setup, and tradeoffs).
