@@ -34,13 +34,13 @@ In doing so:
 
 ### Output
 
-1. We expect to see the code for the following, available in one or multiple git repositories (ex. GitHub, GitLab, Bitbucket, ...):
+1. We expect to see the code for the following, available in one or multiple Git repositories (ex. GitHub, GitLab, Bitbucket, ...):
 
    - A library/component that packages the import service and the interface for accessing the geolocation data.
    - A REST API application that uses the library above.
 
 2. We also expect to see the application running. To do that, the code should be deployed on a Cloud Platform of your choice (e.g. [Gigalixir](https://www.gigalixir.com/), [Heroku](https://www.heroku.com/), [Fly.io](https://fly.io/), [Digital Ocean](https://www.digitalocean.com/), AWS, Google Cloud or Azure), and the sample data, should be imported into the deployed application (according to the cloud platform limits). Please use `cloud_data_dump.csv` as the file to import into the deployed application.
-3. We would like to see your train of thought and trade-offs written down in a file.
+3. We would like to see your train of thought and trade-offs written down. To do so, please include a README file in the root folder of the API repo.
 
 #### Bonus
 
